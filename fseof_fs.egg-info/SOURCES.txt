@@ -1,7 +1,0 @@
-README.md
-setup.py
-fseof_fs.egg-info/PKG-INFO
-fseof_fs.egg-info/SOURCES.txt
-fseof_fs.egg-info/dependency_links.txt
-fseof_fs.egg-info/requires.txt
-fseof_fs.egg-info/top_level.txt
