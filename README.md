@@ -1,5 +1,5 @@
 # FSEOF_FS
-Flux Sampling based on Enforced Objective Flux (FSEOF, Choi et al. 2010) is an algorithm that uses Genome-scale metabolic models (GEMs) to find gene targets for upregulation and downregulation to increase metabolic flux towards a desired metabolic product.
+Flux Sampling based on Enforced Objective Flux (FSEOF, Choi et al. 2010) is an algorithm that uses Genome-scale metabolic models (GEMs) to find gene targets for upregulation and downregulation that increase metabolic flux towards a desired metabolic product.
 
 This package provides a python implementation of the FSEOF algorithm, extended with Flux Sampling (FSEOF_FS). In FSEOF, Flux Balance Analysis (FBA) is performed with biomass as objective function, under the constraint of a step-wise increasing lower bound on production of the target metabolite. Reaction fluxes that are positively correlated to increasing lower-bound on target metabolite production are identified as targets for upregulation in metabolic engineering, while reaction fluxes that are negatively correlated to increasing lower-bound on target metabolite production are identified as targets for downregulation.
 
