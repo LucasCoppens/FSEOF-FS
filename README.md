@@ -9,10 +9,13 @@ In FSEOF-FS, two sets of solutions are calculated by performing flux sampling on
 
 # Installation
 
-```
-1. Clone the repository
-2. Change directory to the cloned repository
-3. python3 -m pip install .
+```bash
+# 1. Clone the repository
+git clone git@github.com:LucasCoppens/fseof_fs.git
+# 2. Change directory to the cloned repository
+cd fseof_fs
+# 3. install using python
+python3 -m pip install .
 ```
 
 # Usage
