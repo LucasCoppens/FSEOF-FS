@@ -1,9 +1,21 @@
 # FSEOF-FS
-A python implementation of the Flux Sampling based on Enforced Objective Flux (FSEOF) algorithm for metabolic engineering (by Choi et al. 2010) extended with Flux Sampling. In FSEOF, Flux Balance Analysis (FBA) is performed with biomass as objective function, under the constraint of a step-wise increasing lower bound on production of the target metabolite. Reaction fluxes that are positively correlated to increasing lower-bound on target metabolite production are identified as targets for upregulation in metabolic engineering, while reaction fluxes that are negatively correlated to increasing lower-bound on target metabolite production are identified as targets for downregulation.
+Flux Sampling based on Enforced Objective Flux (FSEOF, Choi et al. 2010) is an algorithm that uses Genome-scale metabolic models (GEMs) to find gene targets for upregulation and downregulation to increase metabolic flux towards a desired metabolic product.
+
+This package provides a python implementation of the FSEOF algorithm, extended with Flux Sampling. In FSEOF, Flux Balance Analysis (FBA) is performed with biomass as objective function, under the constraint of a step-wise increasing lower bound on production of the target metabolite. Reaction fluxes that are positively correlated to increasing lower-bound on target metabolite production are identified as targets for upregulation in metabolic engineering, while reaction fluxes that are negatively correlated to increasing lower-bound on target metabolite production are identified as targets for downregulation.
 
 In FVSEOF (Park et al. 2012), Flux Variability Analysis was proposed to address the non-uniqueness of FBA by evaluating the possible range of fluxes in the optimal solution space. In this implementation, Flux Sampling was chosen as alternative to FVA, as it also yields approximate flux ranges matching the optimal solution, but requires much less computational time. 
 
+In FSEOF-FS, two sets of solutions are calculated by performing flux sampling on the model under two different lower bound constraints on the production of the desired product. These lower bounds are set as fractions of the maximal theoretical yield of the product, which is first calculated by the algorithm. The default constraints on product formation lower bound are 10% (0.1) and 90% (0.9), but they can be set by the user. The biomass reaction is set as the objective. After flux sampling, reactions with mean fluxes of the same sign between the two sets are considered. If mean flux of a reaction increases with increasing lower bound on product formation, it is identified as a target for upregulation. If mean flux of a reaction decreases with increasing lower bound on product formation, it is identified as a target for downregulation.
 
+# Installation
+
+```
+1. Clone the repository
+2. Change directory to the cloned repository
+3. python3 -m pip install .
+```
+
+# Usage
 
 ## References
  
