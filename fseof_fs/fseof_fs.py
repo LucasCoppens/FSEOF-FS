@@ -140,7 +140,7 @@ class FSEOF_FS():
         """
         flux_list = {}
         for _ in tqdm.tqdm(range(n)):
-            sol = loopless_solution(self.model)
+            sol = self.model.optimize()
             for r in self.model.reactions:
                 if r.id in flux_list:
                     flux_list[r.id].append(sol.fluxes[r.id])
