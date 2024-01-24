@@ -3,7 +3,7 @@ Flux Variability Sampling based on Enforced Objective Flux (FVSEOF, Park et al. 
 
 This package provides a python implementation of the FVSEOF algorithm. In FVSEOF, Flux Variability Analysis (FVA) is performed with biomass as objective function, under the constraint of a step-wise increasing lower bound on production of the target metabolite. Reaction fluxes that are positively correlated to increasing lower-bound on target metabolite production are identified as targets for upregulation in metabolic engineering, while reaction fluxes that are negatively correlated to increasing lower-bound on target metabolite production are identified as targets for downregulation.
 
-When running the algorithm it is also possible to use Flux Balance Analysis (FBA) instead of FVA. This effectively turns the algorithm into the earlier version FSEOF by Choi et al. (2010). This option is a lot faster but may yield different results. 
+When running the algorithm, it is also possible to use Flux Balance Analysis (FBA) instead of FVA. This effectively turns the algorithm into the earlier version FSEOF by Choi et al. (2010). This option is a lot faster but may yield different results. 
 
 This Python implementation of FVSEOF and FSEOF is based on the work published by [Park et al. (2012)](https://doi.org/10.1186/1752-0509-6-106) and [Choi et al. (2010)](https://doi.org/10.1128/aem.00115-10). All credit for the design and concept of the algorithm goes to the original authors.
 
