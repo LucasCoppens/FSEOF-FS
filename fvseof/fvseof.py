@@ -120,7 +120,7 @@ class FVSEOF():
             except:
                 return True
 
-    def run(self, n_steps = 10, check_essentiality=False, fva = True, n_processes = 1) -> pd.DataFrame:
+    def run(self, n_steps = 10, check_essentiality=False, fva = True, fva_n_processes = 1) -> pd.DataFrame:
         """
         Run FSEOF_FS on the model. 2 points for lower bound on target production are used to find fluxes that increase or decrease when the target production is increased.
         
@@ -132,7 +132,7 @@ class FVSEOF():
             Whether to check if target reactions are essential. The default is True.
         fva : bool, optional
             Whether to perform flux variability analysis. If False, FBA is used, which turns this function into the FSEOF algorithm instead of the FVSEOF algorithm. Default is True.
-        n_processes : int, optional
+        fva_n_processes : int, optional
             The number of processes to use for flux variability analysis. The default is 1.
             
         Returns
@@ -152,7 +152,7 @@ class FVSEOF():
                 model.reactions.get_by_id(self.product_sink_reaction_id).lower_bound = step_lower_bound
 
                 if fva:
-                    fva_df = flux_variability_analysis(model, fraction_of_optimum=0.95, processes=n_processes)
+                    fva_df = flux_variability_analysis(model, fraction_of_optimum=0.95, processes=fva_n_processes)
                     for r_id in [r.id for r in self.model.reactions]:
                         per_step_fluxes[r_id].append((fva_df.loc[r_id, "maximum"] + fva_df.loc[r_id, "minimum"]) / 2)
                 else:
