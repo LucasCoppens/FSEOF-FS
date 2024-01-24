@@ -199,7 +199,7 @@ class FVSEOF():
                     df_data[r_id]["essentiality"] = essentialities[r_id]
 
                 for i, step_lower_bound in enumerate(steps_lower_bounds):
-                    df_data[r_id]["step_" + str(i)] = fva_means[r_id][i]
+                    df_data[r_id]["step_" + str(i)] = per_step_fluxes[r_id][i]
             
         df = pd.DataFrame.from_dict(df_data, orient="index")
         df.index.name = "reaction_id"
