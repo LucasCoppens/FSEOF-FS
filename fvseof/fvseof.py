@@ -146,7 +146,7 @@ class FVSEOF():
         # Perform fva / fba and retain (mean) fluxes for each step
         per_step_fluxes = {r_id: [] for r_id in [r.id for r in self.model.reactions]}
         for i, step_lower_bound in enumerate(steps_lower_bounds):
-            print("Performing {} for step {}/{}...".format(method, 1, len(steps_lower_bounds)), end="")
+            print("\rPerforming {} for step {}/{}...".format(method, 1, len(steps_lower_bounds)), end="")
             with self.model as model:
                 model.objective = self.biomass_reaction_id
                 model.reactions.get_by_id(self.product_sink_reaction_id).lower_bound = step_lower_bound
@@ -180,7 +180,7 @@ class FVSEOF():
         # Find essentialities
         essentialities = {}
         if check_essentiality:
-            print("Checking essentialities...")
+            print("Calculating essentialities...")
             for i, r_id in enumerate([r.id for r in self.model.reactions]):
                 print("\rChecking essentiality for reaction " + str(i+1) + "/" + str(len([r.id for r in self.model.reactions])) + "...", end="")
                 essentialities[r_id] = self.check_essential_reaction(r_id) if check_essentiality else None
