@@ -5,7 +5,7 @@ This package provides a python implementation of the FVSEOF algorithm. In FVSEOF
 
 When running the algorithm it is also possible to use Flux Balance Analysis (FBA) instead of FVA. This effectively turns the algorithm into the earlier version FSEOF by Choi et al. (2010). This option is a lot faster but may yield different results. 
 
-This Python implementation of FVSEOF is based on the work published by [Park et al. (2012)][https://doi.org/10.1186/1752-0509-6-106]. All credit for the design and concept of the algorithm goes to the original authors.
+This Python implementation of FVSEOF is based on the work published by [Park et al. (2012)](https://doi.org/10.1186/1752-0509-6-106) and [Choi et al. (2010)](https://doi.org/10.1128/aem.00115-10). All credit for the design and concept of the algorithm goes to the original authors.
 
 ## Installation
 
