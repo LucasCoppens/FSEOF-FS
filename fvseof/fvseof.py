@@ -180,7 +180,7 @@ class FVSEOF():
         # Find essentialities
         essentialities = {}
         if check_essentiality:
-            print("Calculating essentialities...")
+            print("\nCalculating essentialities...")
             for i, r_id in enumerate([r.id for r in self.model.reactions]):
                 print("\rChecking essentiality for reaction " + str(i+1) + "/" + str(len([r.id for r in self.model.reactions])) + "...", end="")
                 essentialities[r_id] = self.check_essential_reaction(r_id) if check_essentiality else None
