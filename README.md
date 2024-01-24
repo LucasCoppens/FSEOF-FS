@@ -52,7 +52,7 @@ fvseof = FVSEOF(model, model_biomass_reaction_id, model_target_metabolite_id)
 df = fvseof.run(n_steps = 15)
 
 # Use parallel processes to speed up FVA
-df = fvseof.run(n_processes = 8)
+df = fvseof.run(fva_n_processes = 8)
 
 # Return the df with an "essentiality" column which has information on whether a reaction is essential for biomass production in the model
 df = fvseof.run(check_essentiality=True)
