@@ -183,8 +183,9 @@ class FVSEOF():
             print("\nCalculating essentialities...")
             for i, r_id in enumerate([r.id for r in self.model.reactions]):
                 print("\rChecking essentiality for reaction " + str(i+1) + "/" + str(len([r.id for r in self.model.reactions])) + "...", end="")
-                essentialities[r_id] = self.check_essential_reaction(r_id) if check_essentiality else None
-
+                if r_id in target_types:
+                    essentialities[r_id] = self.check_essential_reaction(r_id) if check_essentiality else None
+                    
         # Combine into big df
         df_data = {}
         for r_id in [r.id for r in self.model.reactions]:
