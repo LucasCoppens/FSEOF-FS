@@ -146,7 +146,7 @@ class FVSEOF():
         # Perform fva / fba and retain (mean) fluxes for each step
         per_step_fluxes = {r_id: [] for r_id in [r.id for r in self.model.reactions]}
         for i, step_lower_bound in enumerate(steps_lower_bounds):
-            print("\rPerforming {} for step {}/{}...".format(method, i, len(steps_lower_bounds)), end="")
+            print("\rPerforming {} for step {}/{}...".format(method, i+1, len(steps_lower_bounds)), end="")
             with self.model as model:
                 model.objective = self.biomass_reaction_id
                 model.reactions.get_by_id(self.product_sink_reaction_id).lower_bound = step_lower_bound
@@ -159,6 +159,7 @@ class FVSEOF():
                     fba_sol = loopless_solution(model)
                     for r_id in [r.id for r in self.model.reactions]:
                         per_step_fluxes[r_id].append(fba_sol.fluxes[r_id])
+        print("\nDone.")
 
         # Assign target types based on min and max fluxes
         target_types = {}
