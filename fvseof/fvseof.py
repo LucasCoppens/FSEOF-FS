@@ -8,16 +8,16 @@ import pandas as pd
 class FVSEOF():
     def __init__(self, model, biomass_reaction_id, target_metabolite_id, essential_reaction_threshold = 0.5):
         """
-        Initialize the FSEOF_FS class.
+        Initialize the FVSEOF class.
 
         Parameters
         ----------
         model : cobra.Model
-            The model to perform FSEOF_FS on.
+            The model to perform FVSEOF on.
         biomass_reaction_id : str
             The id of the biomass reaction in the model.
         target_metabolite_id : str
-            The id of the metabolite to perform FSEOF_FS on.
+            The id of the metabolite to perform FVSEOF on.
         essential_reaction_threshold : float, optional
             The threshold fraction of max biomass production below which knocked out reactions are considered essential. The default is 0.5.
         """
@@ -122,7 +122,7 @@ class FVSEOF():
 
     def run(self, n_steps = 10, check_essentiality=False, fva = True, fva_n_processes = 1) -> pd.DataFrame:
         """
-        Run FSEOF_FS on the model. 2 points for lower bound on target production are used to find fluxes that increase or decrease when the target production is increased.
+        Run FVSEOF on the model. 2 points for lower bound on target production are used to find fluxes that increase or decrease when the target production is increased.
         
         Parameters
         ----------
