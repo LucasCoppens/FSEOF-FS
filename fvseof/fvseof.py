@@ -192,7 +192,8 @@ class FVSEOF():
             if r_id in target_types:
                 df_data[r_id] = {
                     "target_type": target_types[r_id],
-                    "slope": slopes[r_id]
+                    "slope": slopes[r_id],
+                    "gene_reaction_rule": self.model.reactions.get_by_id(r_id).gene_reaction_rule
                 }
 
                 if check_essentiality:
