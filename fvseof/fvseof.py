@@ -164,7 +164,7 @@ class FVSEOF():
         # Assign target types based on min and max fluxes
         target_types = {}
         for r_id in [r.id for r in self.model.reactions]:
-            if not (per_step_fluxes[r_id][0] == 0 and per_step_fluxes[r_id][-1] == 0):
+            if not per_step_fluxes[r_id][0] == per_step_fluxes[r_id][-1]:
                 if per_step_fluxes[r_id][0] * per_step_fluxes[r_id][-1] >= 0:
                     if abs(per_step_fluxes[r_id][-1]) > abs(per_step_fluxes[r_id][0]):
                         target_types[r_id] = "Up"
