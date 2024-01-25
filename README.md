@@ -25,7 +25,7 @@ python3 -m pip install .
 ### Basic
 
 ```python
-# Import the FSEOF_FS class and cobra
+# Import the FVSEOF class and cobra
 from fvseof.fvseof import FVSEOF
 import cobra
 
@@ -38,7 +38,7 @@ model_target_metabolite_id = "cpd00029_c"
 model = cobra.io.read_sbml_model(model_filename)
 model.solver = "glpk"
 
-# Run fseof_fs
+# Run FVSEOF
 fvseof = FVSEOF(model, model_biomass_reaction_id, model_target_metabolite_id)
 df = fvseof.run()
 ```
