@@ -192,10 +192,10 @@ class FVSEOF():
         for r_id in [r.id for r in self.model.reactions]:
             if r_id in target_types:
                 df_data[r_id] = {
-                    "reaction":  self.model.reactions.get_by_id(r_id).name,
-                    "reaction formula": self.model.reactions.get_by_id(r_id).build_reaction_string(),
                     "target_type": target_types[r_id],
-                    "gene_reaction_rule": self.model.reactions.get_by_id(r_id).gene_reaction_rule,
+                    "reaction":  self.model.reactions.get_by_id(r_id).name,
+                    "reaction formula": self.model.reactions.get_by_id(r_id).build_reaction_string(metabolite_names=True),
+                    "gene_reaction_rule": self.model.reactions.get_by_id(r_id).gene_reaction_rule.replace(" or ", "/").replace(" and ", "+"),
                     "slope": slopes[r_id],
                 }
 
