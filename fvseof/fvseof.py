@@ -194,7 +194,7 @@ class FVSEOF():
                 df_data[r_id] = {
                     "target_type": target_types[r_id],
                     "reaction":  self.model.reactions.get_by_id(r_id).name,
-                    "reaction formula": self.model.reactions.get_by_id(r_id).build_reaction_string(metabolite_names=True),
+                    "reaction formula": self.model.reactions.get_by_id(r_id).build_reaction_string(use_metabolite_names=True),
                     "gene_reaction_rule": self.model.reactions.get_by_id(r_id).gene_reaction_rule.replace(" or ", "/").replace(" and ", "+"),
                     "slope": slopes[r_id],
                 }
